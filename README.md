@@ -1,6 +1,9 @@
-# House-Price-Prediction
+# greetingApp_FLASK
+a simple greeting app built with flask, ready to deploy to Heroku
 
-# ISSUE
-The unpredictable fluctuations in real estate prices make it challenging for potential buyers to ascertain the true value of homes, leading to poorly informed purchasing decisions.
-# Solution 
-Cross-referencing data that will be leveraged in this BI project will assist us in creating autonomous dashboards and developing a predictive model to provide real estate professionals in the metropolitan area with the ability to make decisions with significant flexibility.
+![ss](https://user-images.githubusercontent.com/32107652/134775021-659d1384-0c37-43a7-b373-593d87f2b475.png)
+<br>
+<br>
+Author: Mariya Sha
+<br>
+Watch on YouTube: https://youtu.be/6plVs_ytIH8

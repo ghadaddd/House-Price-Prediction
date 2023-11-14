@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>House Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .prediction {
+      font-size: 24px;
+      margin-top: 20px;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body style="background-image:url('https://www.vantage-ai.com/hubfs/House%20prices.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;padding-top: 100px;">
+  <div style="text-align: center;">
+    <div class="container">
+      <h1>House Price Prediction</h1>
+      <form method="POST" action="/predict-price">
+        <label for="state">State:</label>
+        <!-- <input type="text" name="state" id="state" required><br> -->
+        <select id="state" name="state" required>
+          <option value="">Choose a state </option>
+          <option value="Shoreline">Shoreline</option>
+          <option value="Seattle">Seattle</option>
+          <option value="Kent">Kent</option>
+          <option value="Bellevue">Bellevue</option>
+          <option value="Redmond">Redmond</option>
+          <option value="Maple Valley">Maple Valley</option>
+          <option value="North Bend">North Bend</option>
+          <option value="Lake Forest Park">Lake Forest Park</option>
+          <option value="Sammamish">Sammamish</option>
+          <option value="Auburn">Auburn</option>
+          <option value="Des Moines">Des Moines</option>
+          <option value="Bothell">Bothell</option>
+          <option value="Federal Way">Federal Way</option>
+          <option value="Kirkland">Kirkland</option>
+          <option value="Issaquah">Issaquah</option>
+          <option value="Woodinville">Woodinville</option>
+          <option value="Normandy Park">Normandy Park</option>
+          <option value="Fall City">Fall City</option>
+          <option value="Renton">Renton</option>
+          <option value="Carnation">Carnation</option>
+          <option value="Snoqualmie">Snoqualmie</option>
+          <option value="Duvall">Duvall</option>
+          <option value="Burien">Burien</option>
+          <option value="Covington">Covington</option>
+          <option value="Inglewood-Finn Hill">Inglewood-Finn Hill</option>
+          <option value="Kenmore">Kenmore</option>
+          <option value="Newcastle">Newcastle</option>
+          <option value="Mercer Island">Mercer Island</option>
+          <option value="Black Diamond">Black Diamond</option>
+          <option value="Ravensdale">Ravensdale</option>
+          <option value="Clyde Hill">Clyde Hill</option>
+          <option value="Algona">Algona</option>
+          <option value="Skykomish">Skykomish</option>
+          <option value="Tukwila">Tukwila</option>
+          <option value="Vashon">Vashon</option>
+          <option value="Yarrow Point">Yarrow Point</option>
+          <option value="SeaTac">SeaTac</option>
+          <option value="Medina">Medina</option>
+          <option value="Enumclaw">Enumclaw</option>
+          <option value="Snoqualmie Pass">Snoqualmie Pass</option>
+          <option value="Pacific">Pacific</option>
+          <option value="Beaux Arts Village">Beaux Arts Village</option>
+          <option value="Preston">Preston</option>
+          <option value="Milton">Milton</option>
+      </select>
+        <label for="nombre_de_chambre">Number of Bedrooms:</label>
+        <input type="number" name="nombre_de_chambre" id="nombre_de_chambre" required><br>
+        <label for="surface_living">Living Surface Area:</label>
+        <input type="number" step="0.01" name="surface_living" id="surface_living" required><br>
+        <input type="submit" value="Predict">
+      </form>
+      {% if prediction %}
+      <div class="prediction">
+        <strong>Prediction:</strong> {{ prediction }} $
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+
+</html>
